@@ -4,25 +4,25 @@ import java.util.Date;
 public class Main {
 
     public static void main(String[] args) {
-        var institute = new Institute("ВГУ", "Университетская площадь 1", null);
+        Institute institute = new Institute("ВГУ", "Университетская площадь 1", null);
 
-        var lecture = new Lecturer(1, 23, "Соломатин", "dimok@gmail.com", 1);
+        Lecturer lecture = new Lecturer(1, 23, "Соломатин", "solomatin@gmail.com", 1);
 
-        var dean = new Dean("Крыловецкий");
+        Dean dean = new Dean("Крыловецкий");
 
         ArrayList<Lecturer> lecturers = new ArrayList<>() {{
             add(lecture);
         }};
 
-        var course = new Course(lecturers, "ООП", 1123, 321);
+        Course course = new Course(lecturers, "ООП", 1123, 321);
 
         ArrayList<Course> courses = new ArrayList<>() {{
             add(course);
         }};
 
-        var department = new Department("Програмная инженерия", courses);
+        Department department = new Department("Програмная инженерия", courses);
 
-        var faculty = new Faculty(dean, "ФКН", new ArrayList<>() {{
+        Faculty faculty = new Faculty(dean, "ФКН", new ArrayList<>() {{
             add(department);
         }});
 
@@ -32,13 +32,13 @@ public class Main {
 
         institute.setFaculties(faculties);
 
-        var participation = new Participation(34);
+        Participation participation = new Participation(34);
 
-        var project = new Project("WedCSF", new Date(167062077), new Date(999999999));
+        Project project = new Project("WedCSF", new Date(167062077), new Date(999999999));
 
-        var assistant = new ResearchAssociate("Сидоркин","IT");
+        ResearchAssociate assistant = new ResearchAssociate("Егоров","IT");
 
-        var admin = new AdministrativeEmployee("Шевцов");
+        AdministrativeEmployee admin = new AdministrativeEmployee("Смирнов");
 
         Object[] objects = new Object[]{admin, course, dean, department, faculty, institute, lecture, participation, project, assistant};
 
